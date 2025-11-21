@@ -1,0 +1,323 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  font-family: "Nunito", sans-serif;
+    background: #f5f4ff;
+    padding: 30px;
+    color: #1f1f1f;
+    line-height: 1.6;
+}
+h1 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, #03000e, #070113);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+
+.input, .select {
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    border: 2px solid transparent;
+    background: #fff;
+    transition: .25s ease;
+    box-shadow: 0 0 0 rgba(125, 95, 255, 0.15);
+}
+
+.input { width: 320px; }
+
+.input:focus, .select:focus {
+    border-color: #9d7bff;
+    box-shadow: 0 0 10px rgba(125, 95, 255, 0.35);
+    outline: none;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #ece8ff;
+    box-shadow: 0 6px 18px rgba(125, 95, 255, 0.15);
+    cursor: pointer;
+    overflow: hidden;
+    transition: .3s ease;
+    animation: fadeCard .35s ease;
+}
+
+@keyframes fadeCard {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #cbb7ff;
+    box-shadow: 0 14px 30px rgba(125, 95, 255, 0.35);
+}
+
+/* ===== CARD IMAGE ===== */
+.card img {
+    height: 170px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 12px;
+    transition: .3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.07);
+}
+
+
+.card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.card p {
+    font-size: 18px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #7d5fff, #b892ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+
+.card-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(135deg, #7d5fff, #b892ff);
+    box-shadow: 0 4px 14px rgba(125, 95, 255, 0.30);
+    transition: .25s ease;
+}
+
+.card-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(125, 95, 255, 0.45);
+}
+
+.card-btn:active {
+    transform: scale(.97);
+}
+
+
+.loading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #7d5fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.loading::after {
+    content: "";
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    border-top: 3px solid #7d5fff;
+    animation: spin .6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+.modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+
+.modal {
+    width: 420px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 45px rgba(0,0,0,.35);
+    animation: modalFade .25s ease;
+}
+
+@keyframes modalFade {
+    from { opacity: 0; transform: scale(.9) translateY(20px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.big-img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+
+#mPrice {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #7d5fff, #b892ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 10px 0;
+}
+
+
+#closeModal {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background: #ff4d4d;
+    box-shadow: 0 6px 15px rgba(255, 77, 77, .4);
+    transition: .25s ease;
+}
+
+#closeModal:hover {
+    background: #e63939;
+    transform: scale(1.15);
+}
+
+/* ===== ALERT ===== */
+.center-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    padding: 18px 26px;
+    background: linear-gradient(135deg, #ff4d4d, #ff7a7a);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 14px;
+    box-shadow: 0 10px 35px rgba(255, 77, 77, .40);
+    opacity: 0;
+    z-index: 999;
+    transition: .35s;
+}
+
+.center-alert.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+.modal {
+    width: 900px;                    
+    padding: 35px;                   
+    border-radius: 28px;            
+}
+
+/* Bố cục 2 cột lớn hơn */
+.modal-content {
+    display: grid;
+    grid-template-columns: 45% 55%;   
+    gap: 30px;                        
+    align-items: center;
+}
+
+/* Cột trái (ảnh) */
+.modal-left {
+    border-right: 1px solid #e5e5e5;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.big-img {
+    width: 100%;
+    max-height: 380px;                
+    object-fit: contain;
+}
+
+/* Cột phải (thông tin) */
+.modal-right h2 {
+    font-size: 26px;                 
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.modal-right #mPrice {
+    font-size: 34px;                 
+    margin: 12px 0 16px 0;
+}
+
+.modal-right #mDesc {
+    font-size: 17px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    flex-grow: 1;   
+}
+
+.card-btn {
+    margin-top: auto;    
+}

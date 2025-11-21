@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta viewport="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 class="title">Danh sách sản phẩm</h1>
+
+        <!-- Thanh công cụ gồm tìm kiếm + sắp xếp -->
+        <div class="toolbar">
+            <input type="text" id="searchInput" class="input" placeholder=" Tìm sản phẩm...">
+            
+            <select id="sortSelect" class="select">
+                <option value="">Sắp xếp theo giá</option>
+                <option value="asc">Giá tăng dần</option>
+                <option value="desc">Giá giảm dần</option>
+            </select>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden">Đang tải dữ liệu...</div>
+
+        <!-- Danh sách sản phẩm -->
+        <div id="productList" class="grid"></div>
+
+        <!-- Thông báo không tìm thấy -->
+        <div id="centerAlert" class="center-alert hidden">
+            Không tìm thấy sản phẩm
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <!-- Modal -->
+<div id="modal" class="modal-bg hidden">
+    <div class="modal">
+
+        <button id="closeModal" class="close-btn">×</button>
+
+        <div class="modal-content">
+
+            <!-- Cột trái: ảnh -->
+            <div class="modal-left">
+                <img id="mImg" class="big-img">
+            </div>
+
+            <!-- Cột phải: thông tin -->
+            <div class="modal-right">
+                <h2 id="mTitle"></h2>
+                <p id="mPrice"></p>
+                <p id="mDesc"></p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
